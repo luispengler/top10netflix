@@ -23,3 +23,28 @@ Finally, you can run the program:
 ```
 ./top10.sh
 ```
+# Configurations
+By default (my preference), the top 10 list is only of the Films (English) category, but you can alter the code to choose between Films (Non-English), TV (English), TV (Non-English).
+
+Films (English):
+```
+cat top10.tsv | head -n 11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
+```
+
+Films (Non-English):
+```
+cat top10.tsv | head -n 21 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
+```
+
+TV (English):
+```
+cat top10.tsv | head -n 31 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
+```
+
+TV (Non-English):
+```
+cat top10.tsv | head -n 41 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
+```
+
+# Considerations
+The website says the list is published every Tuesday, so I recommend running it once a week to get the updates.

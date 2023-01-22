@@ -2,7 +2,7 @@
 
 #Get the current list of top 10 and save in the movies.txt file formatted in a way youtube understands
 curl https://top10.netflix.com/data/all-weeks-global.tsv > top10.tsv
-cat top10.tsv | head -n 11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' > movies.txt
+cat top10.tsv | head -n 11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
 
 # My API key
 API_KEY='WRITE HERE YOUR YOUTUBE DATA API KEY'

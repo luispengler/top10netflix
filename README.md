@@ -28,22 +28,23 @@ By default (my preference), the top 10 list is only of the Films (English) categ
 
 Films (English):
 ```
-cat top10.tsv | head -n 11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
+cat top10.tsv | head -n 11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | sed 's/\&/\%26/g'| sed 's/\?/\%3F/g' | uniq > movies.txt
 ```
 
 Films (Non-English):
 ```
-cat top10.tsv | head -n 21 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
+cat top10.tsv | head -n 21 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | sed 's/\&/\%26/g'| sed 's/\?/\%3F/g' | uniq > movies.txt
+
 ```
 
 TV (English):
 ```
-cat top10.tsv | head -n 31 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
+cat top10.tsv | head -n 31 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | sed 's/\&/\%26/g'| sed 's/\?/\%3F/g' | uniq > movies.txt
 ```
 
 TV (Non-English):
 ```
-cat top10.tsv | head -n 41 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | uniq > movies.txt
+cat top10.tsv | head -n 41 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%20trailer/' | sed 's/ /\%20/g' | sed 's/\:/\%3A/g' | sed 's/\&/\%26/g'| sed 's/\?/\%3F/g' | uniq > movies.txt
 ```
 
 # Considerations

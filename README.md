@@ -23,7 +23,7 @@ Finally, you can run the program:
 ```
 ./top10.sh
 ```
-# Configurations
+# Configuration
 By default (my preference), the top 10 list is only of the Films (English) category, but you can alter the code to choose between Films (Non-English), TV (English), TV (Non-English).
 
 Films (English):

@@ -49,3 +49,4 @@ cat top10.tsv | head -n 41 | tail -11 | sed '1d' | cut -f 4 -d "	" | sed 's/$/\%
 # Considerations
 * The website says the list is published every Tuesday, so I recommend running it once a week to get the updates.
 * Not always you will get 10 trailers because some of the top 10 ocasionally get repeated on the list by Netflix (that is what I call popularity!), and removed from the trailers list by our program (due to the "uniq" command).
+* Read the [Future Ideas document](https://github.com/luispengler/top10netflix/wiki/Future-Ideas)
